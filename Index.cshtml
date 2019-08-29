@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BartenderApp.Models.OrderDrink>
+
+@{
+    ViewData["Title"] = "Drink Orders";
+}
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DrinkType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patron)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrinkType)
+                </td>
+                <td>
+                    /*@Html.DisplayFor(modelItem => item.Patron)
+                </td>
+                <td>
+                    @Html.ActionLink("Change", "Edit", new { id = item.OrderId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+                    @Html.ActionLink("Remove", "Delete", new { id = item.OrderId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
